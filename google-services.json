@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "618675411599",
+    "firebase_url": "https://bottele-92220-default-rtdb.firebaseio.com",
+    "project_id": "bottele-92220",
+    "storage_bucket": "bottele-92220.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618675411599:android:2b86b544b29116b169eefa",
+        "android_client_info": {
+          "package_name": "com.kaze.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618675411599-1h5ld92sncp3qit4mcts8gcube2j34kq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbKvSXgKXb0X9KemGKSSElkOmysFpie3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618675411599-1h5ld92sncp3qit4mcts8gcube2j34kq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
