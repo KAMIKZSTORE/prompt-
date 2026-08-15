@@ -1,0 +1,816 @@
+Buat aplikasi Android native bernama CONTROL PANEL — PARENT, yaitu aplikasi parental-control untuk orang tua yang dapat menghubungkan dan mengelola perangkat anak melalui Firebase.
+
+Aplikasi harus mendukung banyak anak dan banyak perangkat.
+
+1. TECHNOLOGY
+
+Gunakan:
+
+- Kotlin
+- Jetpack Compose
+- Material 3
+- MVVM
+- Clean Architecture
+- Repository Pattern
+- Kotlin Coroutines
+- Flow
+- Firebase Authentication
+- Firebase Realtime Database atau Firestore
+- Firebase Cloud Messaging
+- DataStore
+- Secure local storage
+- QR Code generator
+- Charts
+- Maps untuk lokasi
+
+2. UI DESIGN
+
+Tema:
+
+CONTROL PANEL PARENT
+
+Style:
+
+- Black
+- Red
+- Dark futuristic
+- Liquid Glass
+- Glassmorphism
+- Blur
+- Red neon glow
+- Transparent cards
+- Rounded corners
+- Smooth animations
+- Premium dashboard
+
+3. SPLASH
+
+Tampilkan:
+
+- CONTROL PANEL logo
+- Red glow
+- Blur
+- Fade
+- Scale
+- Loading
+
+Check:
+
+- Firebase
+- Authentication
+- Session
+
+Jika belum login:
+
+→ Login.
+
+Jika sudah:
+
+→ Parent Dashboard.
+
+4. AUTHENTICATION
+
+Buat:
+
+- Register
+- Login
+- Logout
+- Forgot password
+- Email verification
+- Session persistence
+
+Role:
+
+"OWNER"
+"PARENT"
+"VIEWER"
+
+5. PARENT DASHBOARD
+
+Dashboard:
+
+CHILDREN
+
+Jumlah anak.
+
+DEVICES
+
+Jumlah perangkat.
+
+ONLINE
+
+Jumlah online.
+
+OFFLINE
+
+Jumlah offline.
+
+SCREEN TIME
+
+Total penggunaan.
+
+ALERTS
+
+Alert terbaru.
+
+Buat animated glass statistics.
+
+6. ADD CHILD DEVICE
+
+Tombol:
+
++ ADD CHILD
+
+Generate pairing code otomatis.
+
+Format:
+
+"CP-8K4M-72PX"
+
+Generate QR Code.
+
+Tampilkan:
+
+- Pairing code
+- QR code
+- Expiration
+- Pairing status
+
+7. PAIRING
+
+Saat Child memasukkan code:
+
+Firebase:
+
+"pairingRequests/{pairingId}"
+
+Status:
+
+"pending"
+
+Parent menerima:
+
+NEW DEVICE REQUEST
+
+Informasi:
+
+- Device model
+- Android version
+- Device name
+- Time
+- Pairing ID
+
+Tombol:
+
+"APPROVE"
+
+"REJECT"
+
+Jika APPROVE:
+
+status:
+
+"approved"
+
+Child menjadi connected device.
+
+8. MULTIPLE CHILDREN
+
+Parent dapat membuat profile:
+
+- Child name
+- Avatar
+- Device
+- Screen-time rules
+- Schedule
+- Location settings
+
+Contoh:
+
+Andi
+
+Phone:
+Online
+
+Screen Time:
+2h 35m
+
+9. DEVICE LIST
+
+Tampilkan:
+
+- Child name
+- Device name
+- Device model
+- Battery
+- Online/offline
+- Screen time
+- Last seen
+- Location status
+
+Search:
+
+"Search device..."
+
+Filter:
+
+- All
+- Online
+- Offline
+- Alerts
+
+10. DEVICE DETAIL
+
+Tampilkan:
+
+- Device model
+- Manufacturer
+- Android version
+- Battery
+- Charging
+- Network
+- Wi-Fi
+- Storage
+- Last seen
+- Online status
+- Screen time
+- Location
+- Permissions
+- Contacts
+- App usage
+
+11. SCREEN TIME DASHBOARD
+
+Tampilkan:
+
+- Today
+- Yesterday
+- 7 Days
+- 30 Days
+
+Charts:
+
+- Total usage
+- App usage
+- Daily average
+
+Parent dapat mengatur:
+
+Daily Limit
+
+Contoh:
+
+4 hours/day.
+
+12. APP USAGE
+
+Tampilkan:
+
+- App icon
+- App name
+- Usage duration
+- Last opened
+
+Chart:
+
+- Today
+- 7 Days
+- 30 Days
+
+Sorting:
+
+- Most used
+- Least used
+- A-Z
+
+13. APP LIMIT
+
+Parent dapat memilih aplikasi.
+
+Contoh:
+
+YouTube:
+60 min/day
+
+TikTok:
+30 min/day
+
+Minecraft:
+120 min/day
+
+Simpan:
+
+"appLimits/{deviceId}/{packageName}"
+
+Gunakan mekanisme parental-control Android resmi untuk menerapkan pembatasan.
+
+14. APP RESTRICTION
+
+Parent dapat:
+
+- Allow
+- Restrict
+- Set limit
+- Set schedule
+
+Tampilkan confirmation sebelum perubahan.
+
+15. SCHEDULE
+
+Buat:
+
+SCHOOL MODE
+
+07:00–13:00
+
+STUDY MODE
+
+19:00–21:00
+
+BEDTIME
+
+21:30–06:00
+
+CUSTOM
+
+Parent dapat membuat jadwal custom.
+
+Firebase:
+
+"schedules/{deviceId}"
+
+16. LOCATION
+
+Buat halaman:
+
+LOCATION
+
+Tampilkan:
+
+- Current location
+- Map
+- Last updated
+- Accuracy
+- Location permission
+- GPS status
+
+Tombol:
+
+"REQUEST LOCATION"
+
+Hanya bekerja jika Child telah memberikan permission.
+
+17. LOCATION HISTORY
+
+Jika diaktifkan:
+
+Tampilkan:
+
+- Map
+- Timestamp
+- Coordinates
+- Accuracy
+
+Filter:
+
+- Today
+- Yesterday
+- 7 Days
+
+Sediakan retention setting.
+
+18. GEOFENCE
+
+Parent dapat membuat:
+
+HOME
+SCHOOL
+CUSTOM
+
+Input:
+
+- Name
+- Latitude
+- Longitude
+- Radius
+
+Events:
+
+- Enter
+- Exit
+
+Kirim FCM alert.
+
+Contoh:
+
+Andi arrived at School
+
+19. CONTACTS
+
+Buat halaman:
+
+CHILD CONTACTS
+
+Tampilkan daftar kontak yang telah disinkronkan dari perangkat Child setelah permission diberikan.
+
+Data:
+
+- Name
+- Phone
+- Email
+- Contact photo jika tersedia
+- Favorite status jika tersedia
+- Last sync
+
+Fitur:
+
+- Search
+- A-Z sorting
+- Filter
+- Refresh
+- Contact detail
+- Contact count
+- Last synchronization
+
+Firebase:
+
+"contacts/{deviceId}/{contactId}"
+
+Hanya parent yang authorized untuk device tersebut yang dapat membaca data.
+
+20. CONTACT PERMISSION STATUS
+
+Tampilkan:
+
+Contacts Permission
+
+Granted / Denied.
+
+Jika Denied:
+
+"Permission not granted on Child device"
+
+Jangan mencoba bypass permission.
+
+21. DEVICE CONTROL
+
+Buat Command Center:
+
+FLASHLIGHT
+
+ON / OFF
+
+VIBRATE
+
+Send vibration.
+
+NOTIFICATION
+
+Send notification.
+
+LOCK DEVICE
+
+Gunakan Android official DevicePolicy/parental-control mechanism jika tersedia dan telah diotorisasi.
+
+Jangan bypass PIN/password.
+
+22. COMMAND CENTER
+
+Commands:
+
+"REQUEST_STATUS"
+
+"REQUEST_LOCATION"
+
+"FLASHLIGHT_ON"
+
+"FLASHLIGHT_OFF"
+
+"VIBRATE"
+
+"SEND_NOTIFICATION"
+
+"LOCK_DEVICE"
+
+Status:
+
+Pending
+Sent
+Executed
+Failed
+Expired
+
+Tampilkan realtime progress.
+
+23. ALERT CENTER
+
+Alert:
+
+- Pairing request
+- Device offline
+- Device online
+- Low battery
+- Location permission disabled
+- Location event
+- Geofence enter
+- Geofence exit
+- Screen-time reached
+- App limit reached
+- Permission changed
+- Security event
+
+24. FCM
+
+Push notifications untuk:
+
+- Pairing
+- Alerts
+- Device status
+- Geofence
+- Screen time
+- Security events
+
+25. ACTIVITY LOG
+
+Tampilkan:
+
+- Pairing
+- Device connected
+- Device disconnected
+- Command sent
+- Command executed
+- Command failed
+- Screen-time changed
+- App limit changed
+- Schedule changed
+- Location event
+- Contact synchronization
+- Permission changed
+
+Setiap log:
+
+- Timestamp
+- Device
+- Parent
+- Action
+- Result
+
+26. DEVICE MANAGEMENT
+
+Parent dapat:
+
+- Rename device
+- Rename child
+- Disconnect
+- Revoke access
+- View permissions
+- View contacts
+- View activity
+- Generate new pairing code
+
+Revoke:
+
+Firebase authorization dihapus.
+
+Device tidak dapat menerima command setelah revoke.
+
+27. FAMILY MANAGEMENT
+
+Support multiple children.
+
+Support multiple parents.
+
+Roles:
+
+OWNER
+
+Full control.
+
+PARENT
+
+Manage assigned children.
+
+VIEWER
+
+View-only.
+
+OWNER dapat:
+
+- Add parent
+- Remove parent
+- Add child
+- Remove child
+- Assign child
+- Revoke device
+
+28. SECURITY
+
+Implement:
+
+- Firebase Authentication
+- UID
+- Parent-child relationship
+- Device ID
+- Pairing token
+- Token expiration
+- Security Rules
+- Audit logs
+- Session management
+- Revoke access
+- Command authorization
+
+Parent hanya dapat membaca/mengontrol device yang terhubung ke akun tersebut.
+
+29. FIREBASE DATABASE
+
+Struktur:
+
+users/
+parents/
+children/
+devices/
+pairingRequests/
+connections/
+commands/
+screenTime/
+appUsage/
+appLimits/
+schedules/
+locations/
+geofences/
+contacts/
+permissions/
+alerts/
+activityLogs/
+
+Contoh:
+
+"devices/{deviceId}"
+
+Fields:
+
+- parentId
+- childId
+- deviceName
+- model
+- androidVersion
+- battery
+- charging
+- online
+- lastSeen
+
+30. REALTIME SYNC
+
+Jika Child berubah:
+
+- Battery
+- Online status
+- Screen time
+- App usage
+- Location
+- Permission
+- Contact sync
+
+Parent UI harus update secara realtime tanpa refresh.
+
+31. OFFLINE
+
+Jika Child offline:
+
+Tampilkan:
+
+DEVICE OFFLINE
+
+Command yang aman dapat masuk queue dengan expiration.
+
+Ketika Child online:
+
+sinkronkan kembali.
+
+32. SETTINGS
+
+Buat:
+
+- Account
+- Family
+- Children
+- Devices
+- Notifications
+- Security
+- Appearance
+- Privacy
+- Firebase status
+- Session
+- About
+- Logout
+
+33. PRIVACY
+
+Berikan halaman:
+
+Privacy Center
+
+Tampilkan:
+
+- Data yang dikumpulkan
+- Permission yang digunakan
+- Contact sharing
+- Location sharing
+- Screen-time monitoring
+- Data retention
+- Revoke access
+
+34. IMPORTANT SAFETY / PRIVACY
+
+Jangan membuat fitur:
+
+- Stealth mode
+- Hidden app
+- Self-delete setelah permission
+- Bypass Android permissions
+- Bypass PIN/password
+- Hidden microphone
+- Hidden camera
+- Hidden screen recording
+- SMS interception tanpa permission
+- Gallery access tanpa permission
+- Credential theft
+- Accessibility abuse
+
+Semua fitur sensitif harus menggunakan API Android resmi dan permission yang sesuai.
+
+35. PROJECT STRUCTURE
+
+Buat:
+
+app/
+├── auth/
+├── data/
+├── domain/
+├── firebase/
+├── pairing/
+├── children/
+├── devices/
+├── screenTime/
+├── appUsage/
+├── appLimits/
+├── schedules/
+├── locations/
+├── geofence/
+├── contacts/
+├── commands/
+├── permissions/
+├── notifications/
+├── alerts/
+├── activityLogs/
+├── family/
+├── security/
+├── ui/
+└── settings/
+
+36. FINAL OUTPUT
+
+Berikan source code production-ready untuk:
+
+1. Authentication
+2. Firebase setup
+3. Firebase Security Rules
+4. Parent dashboard
+5. Child management
+6. Device management
+7. Pairing code
+8. QR pairing
+9. Realtime Firebase
+10. FCM
+11. Screen time
+12. App usage
+13. App limits
+14. Schedule
+15. School Mode
+16. Study Mode
+17. Bedtime
+18. Location
+19. Location history
+20. Geofence
+21. Contacts
+22. Permission monitoring
+23. Command center
+24. Device lock menggunakan API resmi
+25. Flashlight
+26. Vibration
+27. Notifications
+28. Alerts
+29. Activity logs
+30. Multiple children
+31. Multiple devices
+32. Parent roles
+33. Security
+34. Privacy Center
+35. Liquid Glass UI
+36. Animations
+37. Error handling
+38. Offline handling
+39. Complete navigation
+40. Build instructions
+
+Pastikan APK Parent dan APK Child menggunakan Firebase project yang sama, memiliki struktur database yang konsisten, authorization yang benar, dan seluruh komunikasi Parent ↔ Child berlangsung melalui Firebase secara realtime dan aman.
